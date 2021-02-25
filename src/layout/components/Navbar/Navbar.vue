@@ -1,15 +1,22 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="true" class="hamburger-container" @toggleClick="toggleSideBar"></hamburger>
+    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar"/>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import Hamburger from "@/layout/components/Navbar/Hamburger";
 
 export default {
   name: "Navbar",
   components: {Hamburger},
+  computed: {
+    ...mapGetters([
+      'sidebar',
+      'avatar'
+    ])
+  },
   methods: {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
