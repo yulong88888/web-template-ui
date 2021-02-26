@@ -6,6 +6,7 @@
       <div :class="{'fixed-header':fixedHeader}">
         <navbar/>
       </div>
+      <content-area/>
     </div>
   </div>
 </template>
@@ -14,10 +15,11 @@
 import Sidebar from "@/layout/components/Sidebar/Sidebar";
 import Navbar from "@/layout/components/Navbar/Navbar";
 import ResizeHandler from "@/layout/mixin/ResizeHandler";
+import ContentArea from "@/layout/components/ContentArea";
 
 export default {
   name: "index",
-  components: {Navbar, Sidebar},
+  components: {ContentArea, Navbar, Sidebar},
   mixins: [ResizeHandler],
   computed: {
     sidebar() {

@@ -21,7 +21,7 @@ export const constantRoutes = [
         children: [{
             path: 'main',
             name: 'main',
-            // component: () => import('@/views/dashboard/index'),
+            component: () => import('@/views/test1/Test1'),
             meta: {title: '测试模板', icon: 'el-icon-menu'}
         }]
     }, {
@@ -30,7 +30,7 @@ export const constantRoutes = [
         children: [{
             path: 'test1',
             name: 'test2',
-            // component: () => import('@/views/dashboard/index'),
+            component: () => import('@/views/404/404'),
             meta: {title: 'TestChildren', icon: 'el-icon-s-goods'}
         }]
     },
