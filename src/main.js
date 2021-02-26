@@ -9,6 +9,8 @@ import 'normalize.css/normalize.css'
 
 import '@/styles/index.scss' // global css
 
+import '@/icons/index'
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false

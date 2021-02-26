@@ -7,6 +7,14 @@ import Layout from '@/layout/Layout'
 
 export const constantRoutes = [
     {
+        path: '/login',
+        component: () => import('@/views/login/Login'),
+        hidden: true
+    }, {
+        path: '/404',
+        component: () => import('@/views/404/404'),
+        hidden: true
+    }, {
         path: '/',
         component: Layout,
         redirect: '/main',
@@ -14,16 +22,25 @@ export const constantRoutes = [
             path: 'main',
             name: 'main',
             // component: () => import('@/views/dashboard/index'),
-            meta: { title: '八个牙路思密达', icon: 'dashboard' }
+            meta: {title: '测试模板', icon: 'el-icon-menu'}
+        }]
+    }, {
+        path: '/test',
+        component: Layout,
+        children: [{
+            path: 'test1',
+            name: 'test2',
+            // component: () => import('@/views/dashboard/index'),
+            meta: {title: 'TestChildren', icon: 'el-icon-s-goods'}
         }]
     },
     // 404 必须放最后
-    { path: '*', redirect: '/404', hidden: true }
+    {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
     mode: 'history', // require service support
-    scrollBehavior: () => ({ y: 0 }),
+    scrollBehavior: () => ({y: 0}),
     routes: constantRoutes
 })
 
