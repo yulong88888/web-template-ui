@@ -21,17 +21,24 @@ export const constantRoutes = [
         children: [{
             path: 'main',
             name: 'main',
-            component: () => import('@/views/test1/Test1'),
+            component: () => import('@/views/404/404'),
             meta: {title: '测试模板', icon: 'el-icon-menu'}
         }]
     }, {
         path: '/test',
         component: Layout,
+        name: 'Test',
+        meta: {title: '分组测试', icon: 'el-icon-s-home'},
         children: [{
             path: 'test1',
+            name: 'test1',
+            component: () => import('@/views/test1/Test1'),
+            meta: {title: 'TestChildren1', icon: 'el-icon-s-goods'}
+        }, {
+            path: 'test2',
             name: 'test2',
-            component: () => import('@/views/404/404'),
-            meta: {title: 'TestChildren', icon: 'el-icon-s-goods'}
+            component: () => import('@/views/test2/Test2'),
+            meta: {title: 'TestChildren2', icon: 'el-icon-s-goods'}
         }]
     },
     // 404 必须放最后
