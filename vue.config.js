@@ -6,7 +6,7 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
-module.export = {
+module.exports = {
     configureWebpack: {
         name: defaultSettings.title || 'vue Admin Template',
         resolve: {
